@@ -1,5 +1,5 @@
 setwd("C:/Users/nitin/OneDrive/WIP/Auto")
-INfile<-read.csv("Age Open IN's.csv")
+INfile<-read.csv("Open IN's.csv")
 z<-INfile[order(INfile$Owner.Group),]
 #CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-CARDS",z$Owner.Group=="C-BOI-IE-AMS-BOOKKEEPING")
 
@@ -35,7 +35,7 @@ write.table(Name, file = "out.csv",append=TRUE,row.names=FALSE, na="",col.names=
 write.table(ITEM,file="out.csv",append=TRUE,sep=",",row.names=FALSE)
 
 ##################################################
-INfile<-read.csv("Age Open SR's.csv")
+INfile<-read.csv("Open SR's.csv")
 z<-INfile[order(INfile$Owner.Group),]
 #CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-CARDS",z$Owner.Group=="C-BOI-IE-AMS-BOOKKEEPING")
 
@@ -73,7 +73,7 @@ write.table(ITEM,file="out2.csv",append=TRUE,sep=",",row.names=FALSE)
 
 
 ############PR's######################################
-INfile<-read.csv("Age Open PR's.csv")
+INfile<-read.csv("Open PR's.csv")
 z<-INfile[order(INfile$Owner.Group),]
 #CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-CARDS",z$Owner.Group=="C-BOI-IE-AMS-BOOKKEEPING")
 
@@ -112,7 +112,7 @@ write.table(ITEM,file="out3.csv",append=TRUE,sep=",",row.names=FALSE)
 ######################################################################################################
 # PART 2 - NEW IN SR PR SR
 ######################################################################################################
-INfile<-read.csv("Age New IN's.csv")
+INfile<-read.csv("New IN's.csv")
 z<-INfile[order(INfile$Owner.Group),]
 #CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-CARDS",z$Owner.Group=="C-BOI-IE-AMS-BOOKKEEPING")
 
@@ -148,7 +148,7 @@ write.table(Name, file = "out4.csv",append=TRUE,row.names=FALSE, na="",col.names
 write.table(ITEM,file="out4.csv",append=TRUE,sep=",",row.names=FALSE)
 
 ##################################################
-INfile<-read.csv("Age New SR's.csv")
+INfile<-read.csv("New SR's.csv")
 z<-INfile[order(INfile$Owner.Group),]
 #CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-CARDS",z$Owner.Group=="C-BOI-IE-AMS-BOOKKEEPING")
 
@@ -186,7 +186,7 @@ write.table(ITEM,file="out5.csv",append=TRUE,sep=",",row.names=FALSE)
 
 
 ############PR's######################################
-INfile<-read.csv("Age New PR's.csv")
+INfile<-read.csv("New PR's.csv")
 z<-INfile[order(INfile$Owner.Group),]
 #CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-CARDS",z$Owner.Group=="C-BOI-IE-AMS-BOOKKEEPING")
 
@@ -226,7 +226,7 @@ write.table(ITEM,file="out6.csv",append=TRUE,sep=",",row.names=FALSE)
 ######################################################################################################
 # PART 3 - CLOSE NEW IN SR PR SR
 ######################################################################################################
-INfile<-read.csv("Age Closed IN's.csv")
+INfile<-read.csv("Closed IN's.csv")
 z<-INfile[order(INfile$Owner.Group),]
 #CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-CARDS",z$Owner.Group=="C-BOI-IE-AMS-BOOKKEEPING")
 
@@ -262,7 +262,7 @@ write.table(Name, file = "out7.csv",append=TRUE,row.names=FALSE, na="",col.names
 write.table(ITEM,file="out7.csv",append=TRUE,sep=",",row.names=FALSE)
 
 ##################################################
-INfile<-read.csv("Age Closed SR's.csv")
+INfile<-read.csv("Closed SR's.csv")
 z<-INfile[order(INfile$Owner.Group),]
 #CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-CARDS",z$Owner.Group=="C-BOI-IE-AMS-BOOKKEEPING")
 
@@ -300,7 +300,7 @@ write.table(ITEM,file="out8.csv",append=TRUE,sep=",",row.names=FALSE)
 
 
 ############PR's######################################
-INfile<-read.csv("Age Closed PR's.csv")
+INfile<-read.csv("Closed PR's.csv")
 z<-INfile[order(INfile$Owner.Group),]
 #CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-CARDS",z$Owner.Group=="C-BOI-IE-AMS-BOOKKEEPING")
 
@@ -357,15 +357,15 @@ out8 <- read.csv("C:/Users/nitin/OneDrive/WIP/Auto/out8.csv", header=FALSE, na.s
 out9 <- read.csv("C:/Users/nitin/OneDrive/WIP/Auto/out9.csv", header=FALSE, na.strings="")
 
 
-write.xlsx(out, file="Consolidated.xlsx", sheetName="Sheet_Open_IN",row.names=FALSE,col.names=FALSE)
-write.xlsx(out2, file="Consolidated.xlsx", sheetName="Sheet_Open_SR", append=TRUE,row.names=FALSE,col.names=FALSE)
-write.xlsx(out3, file="Consolidated.xlsx", sheetName="Sheet_Open_PR", append=TRUE,row.names=FALSE,col.names=FALSE)
-write.xlsx(out4, file="Consolidated.xlsx", sheetName="Sheet_New_IN", append=TRUE,row.names=FALSE,col.names=FALSE)
-write.xlsx(out5, file="Consolidated.xlsx", sheetName="Sheet_New_SR", append=TRUE,row.names=FALSE,col.names=FALSE)
-write.xlsx(out6, file="Consolidated.xlsx", sheetName="Sheet_New_PR", append=TRUE,row.names=FALSE,col.names=FALSE)
-write.xlsx(out7, file="Consolidated.xlsx", sheetName="Sheet_New_IN", append=TRUE,row.names=FALSE,col.names=FALSE)
-write.xlsx(out8, file="Consolidated.xlsx", sheetName="Sheet_New_SR", append=TRUE,row.names=FALSE,col.names=FALSE)
-write.xlsx(out9, file="Consolidated.xlsx", sheetName="Sheet_New_PR", append=TRUE,row.names=FALSE,col.names=FALSE)
+write.xlsx(out, file="Consolidated.xlsx", sheetName="Open_IN",row.names=FALSE,col.names=FALSE)
+write.xlsx(out2, file="Consolidated.xlsx", sheetName="Open_SR", append=TRUE,row.names=FALSE,col.names=FALSE)
+write.xlsx(out3, file="Consolidated.xlsx", sheetName="Open_PR", append=TRUE,row.names=FALSE,col.names=FALSE)
+write.xlsx(out4, file="Consolidated.xlsx", sheetName="New_IN", append=TRUE,row.names=FALSE,col.names=FALSE)
+write.xlsx(out5, file="Consolidated.xlsx", sheetName="New_SR", append=TRUE,row.names=FALSE,col.names=FALSE)
+write.xlsx(out6, file="Consolidated.xlsx", sheetName="New_PR", append=TRUE,row.names=FALSE,col.names=FALSE)
+write.xlsx(out7, file="Consolidated.xlsx", sheetName="Closed_IN", append=TRUE,row.names=FALSE,col.names=FALSE)
+write.xlsx(out8, file="Consolidated.xlsx", sheetName="Closed_SR", append=TRUE,row.names=FALSE,col.names=FALSE)
+write.xlsx(out9, file="Consolidated.xlsx", sheetName="Closed_PR", append=TRUE,row.names=FALSE,col.names=FALSE)
 
 ##############Delete intermdeiate Files###########
 file.remove("C:/Users/nitin/OneDrive/WIP/Auto/out.csv")
