@@ -36,7 +36,9 @@ for(i in seq_along(age)) {
 }
 
 Bkk$agebucket<-age_bucket
-table(age_bucket)
+Bkk_SR_Open<-as.data.frame(table(age_bucket))
+
+nodata <- data.frame(Age_0_to_7= numeric(0), Age_8_to_15= numeric(0), Age_16_to_30 = numeric(0), Age_31_to_60 = numeric(0), Col_61_to_120 = numeric(0))
 
 
 
