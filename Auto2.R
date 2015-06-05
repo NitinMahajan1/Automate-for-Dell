@@ -13,31 +13,30 @@ write.table(Bkk,file="out2.csv",append=TRUE,sep=",",row.names=FALSE)
 new_date<-as.POSIXlt(strptime(Bkk$Reported.Date, format="%d/%m/%Y"))
 new_date<-as.Date(new_date)
 age<-from_date-new_date
-age_bucket<- as.character(age)
+age_bucket<-age
 
 for(i in seq_along(age)) {
   if(age[i]<8) {
-    age_bucket[i]<- "0-7 days"
+    age_bucket[i]<- 7
   }
   else if(age[i]<16){
-    age_bucket[i]<-"8-15 days"
+    age_bucket[i]<-15
   }
   else if(age[i]<31){
-    age_bucket[i]<-"16-30 days"
+    age_bucket[i]<-30
   }
   else if(age[i]<61){
-    age_bucket[i]<-"31-60 days"
+    age_bucket[i]<-60
   }
-  
   else if(age[i]<121){
-    age_bucket[i]<-"61-120 days"
+    age_bucket[i]<-120
   }
-  else {age_bucket[i]<-"120 days plus"
+  else {age_bucket[i]<-999
   }
 }
 
 Bkk$agebucket<-age_bucket
-
+table(age_bucket)
 
 
 
