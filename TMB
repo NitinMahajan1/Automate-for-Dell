@@ -1,6 +1,13 @@
 setwd("C:/Documents and Settings/C971896/Desktop/Automation#/TMB")
+INfile<- NA
+z<- NA
+Bkk<- NA
+Cards<-NA
+CIS<-NA
+ITEM<-NA
 INfile<-read.csv("Open IN's.csv")
 z<-INfile[order(INfile$Owner.Group),]
+
 
 Name<-"MORTGAGE BUSINESS"
 Bkk<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MORTBUS"), ]
@@ -24,32 +31,20 @@ ITEM<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BIFFRONTEND"), ]
 write.table(Name, file = "out.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(ITEM,file="out.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Name<-"MIS"
-MIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MIS"), ]
-write.table(Name, file = "out.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(MIS,file="out.csv",append=TRUE,sep=",",row.names=FALSE)
-
-
-
-Name<-"PRINT"
-PRINT<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-PRINT"), ]
-write.table(Name, file = "out.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(PRINT,file="out.csv",append=TRUE,sep=",",row.names=FALSE)
-
-
-
-
-
 ##################################################
+INfile<- NA
+z<- NA
+Bkk<- NA
+Cards<-NA
+CIS<-NA
+ITEM<-NA
 INfile<-read.csv("Open SR's.csv")
 z<-INfile[order(INfile$Owner.Group),]
-#CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-RESOURSEBUS",z$Owner.Group=="C-BOI-IE-AMS-MORTBUS")
 
 Name<-"MORTGAGE BUSINESS"
 Bkk<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MORTBUS"), ]
 write.table(Name, file = "out2.csv",row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(Bkk,file="out2.csv",append=TRUE,sep=",",row.names=FALSE)
-
 
 Name<-"RESOURCE BUSINESS"
 Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-RESOURSEBUS"), ]
@@ -67,32 +62,20 @@ write.table(Name, file = "out2.csv",append=TRUE,row.names=FALSE, na="",col.names
 write.table(ITEM,file="out2.csv",append=TRUE,sep=",",row.names=FALSE)
 
 
-Name<-"MIS"
-MIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MIS"), ]
-write.table(Name, file = "out2.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(MIS,file="out2.csv",append=TRUE,sep=",",row.names=FALSE)
-
-
-Name<-"PRINT"
-PRINT<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-PRINT"), ]
-write.table(Name, file = "out2.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(PRINT,file="out2.csv",append=TRUE,sep=",",row.names=FALSE)
-
-
-
-
-
-
 ############PR's######################################
+INfile<- NA
+z<- NA
+Bkk<- NA
+Cards<-NA
+CIS<-NA
+ITEM<-NA
 INfile<-read.csv("Open PR's.csv")
 z<-INfile[order(INfile$Owner.Group),]
-#CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-RESOURSEBUS",z$Owner.Group=="C-BOI-IE-AMS-MORTBUS")
 
 Name<-"MORTGAGE BUSINESS"
 Bkk<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MORTBUS"), ]
 write.table(Name, file = "out3.csv",row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(Bkk,file="out3.csv",append=TRUE,sep=",",row.names=FALSE)
-
 
 Name<-"RESOURCE BUSINESS"
 Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-RESOURSEBUS"), ]
@@ -110,33 +93,22 @@ write.table(Name, file = "out3.csv",append=TRUE,row.names=FALSE, na="",col.names
 write.table(ITEM,file="out3.csv",append=TRUE,sep=",",row.names=FALSE)
 
 
-Name<-"MIS"
-MIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MIS"), ]
-write.table(Name, file = "out3.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(MIS,file="out3.csv",append=TRUE,sep=",",row.names=FALSE)
-
-
-Name<-"PRINT"
-PRINT<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-PRINT"), ]
-write.table(Name, file = "out3.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(PRINT,file="out3.csv",append=TRUE,sep=",",row.names=FALSE)
-
-
-
-
-
 ######################################################################################################
 # PART 2 - NEW IN SR PR SR
 ######################################################################################################
+INfile<- NA
+z<- NA
+Bkk<- NA
+Cards<-NA
+CIS<-NA
+ITEM<-NA
 INfile<-read.csv("New IN's.csv")
 z<-INfile[order(INfile$Owner.Group),]
-#CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-RESOURSEBUS",z$Owner.Group=="C-BOI-IE-AMS-MORTBUS")
 
 Name<-"MORTGAGE BUSINESS"
 Bkk<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MORTBUS"), ]
 write.table(Name, file = "out4.csv",row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(Bkk,file="out4.csv",append=TRUE,sep=",",row.names=FALSE)
-
 
 Name<-"RESOURCE BUSINESS"
 Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-RESOURSEBUS"), ]
@@ -148,28 +120,20 @@ CIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-TMB/TRBFRONTEND"), ]
 write.table(Name, file = "out4.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(CIS,file="out4.csv",append=TRUE,sep=",",row.names=FALSE)
 
-
 Name<-"BIFF FRONTEND"
 ITEM<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BIFFRONTEND"), ]
 write.table(Name, file = "out4.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(ITEM,file="out4.csv",append=TRUE,sep=",",row.names=FALSE)
 
-
-Name<-"MIS"
-MIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MIS"), ]
-write.table(Name, file = "out4.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(MIS,file="out4.csv",append=TRUE,sep=",",row.names=FALSE)
-
-
-Name<-"PRINT"
-PRINT<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-PRINT"), ]
-write.table(Name, file = "out4.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(PRINT,file="out4.csv",append=TRUE,sep=",",row.names=FALSE)
-
 ##################################################
+INfile<- NA
+z<- NA
+Bkk<- NA
+Cards<-NA
+CIS<-NA
+ITEM<-NA
 INfile<-read.csv("New SR's.csv")
 z<-INfile[order(INfile$Owner.Group),]
-#CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-RESOURSEBUS",z$Owner.Group=="C-BOI-IE-AMS-MORTBUS")
 
 Name<-"MORTGAGE BUSINESS"
 Bkk<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MORTBUS"), ]
@@ -181,50 +145,35 @@ Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-RESOURSEBUS"), ]
 write.table(Name, file = "out5.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(Cards,file="out5.csv",append=TRUE,sep=",",row.names=FALSE)
 
-
 Name<-"TMB TRB"
 CIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-TMB/TRBFRONTEND"), ]
 write.table(Name, file = "out5.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(CIS,file="out5.csv",append=TRUE,sep=",",row.names=FALSE)
-
 
 Name<-"BIFF FRONTEND"
 ITEM<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BIFFRONTEND"), ]
 write.table(Name, file = "out5.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(ITEM,file="out5.csv",append=TRUE,sep=",",row.names=FALSE)
 
-
-Name<-"MIS"
-MIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MIS"), ]
-write.table(Name, file = "out5.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(MIS,file="out5.csv",append=TRUE,sep=",",row.names=FALSE)
-
-
-Name<-"PRINT"
-PRINT<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-PRINT"), ]
-write.table(Name, file = "out5.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(PRINT,file="out5.csv",append=TRUE,sep=",",row.names=FALSE)
-
-
-
-
 ############PR's######################################
+INfile<- NA
+z<- NA
+Bkk<- NA
+Cards<-NA
+CIS<-NA
+ITEM<-NA
 INfile<-read.csv("New PR's.csv")
 z<-INfile[order(INfile$Owner.Group),]
-#CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-RESOURSEBUS",z$Owner.Group=="C-BOI-IE-AMS-MORTBUS")
-
 
 Name<-"MORTGAGE BUSINESS"
 Bkk<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MORTBUS"), ]
 write.table(Name, file = "out6.csv",row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(Bkk,file="out6.csv",append=TRUE,sep=",",row.names=FALSE)
 
-
 Name<-"RESOURCE BUSINESS"
 Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-RESOURSEBUS"), ]
 write.table(Name, file = "out6.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(Cards,file="out6.csv",append=TRUE,sep=",",row.names=FALSE)
-
 
 Name<-"TMB TRB"
 CIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-TMB/TRBFRONTEND"), ]
@@ -236,23 +185,17 @@ ITEM<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BIFFRONTEND"), ]
 write.table(Name, file = "out6.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(ITEM,file="out6.csv",append=TRUE,sep=",",row.names=FALSE)
 
-
-Name<-"MIS"
-MIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MIS"), ]
-write.table(Name, file = "out6.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(MIS,file="out6.csv",append=TRUE,sep=",",row.names=FALSE)
-
-Name<-"PRINT"
-PRINT<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-PRINT"), ]
-write.table(Name, file = "out6.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(PRINT,file="out6.csv",append=TRUE,sep=",",row.names=FALSE)
-
 ######################################################################################################
 # PART 3 - CLOSE NEW IN SR PR SR
 ######################################################################################################
+INfile<- NA
+z<- NA
+Bkk<- NA
+Cards<-NA
+CIS<-NA
+ITEM<-NA
 INfile<-read.csv("Closed IN's.csv")
 z<-INfile[order(INfile$Owner.Group),]
-#CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-RESOURSEBUS",z$Owner.Group=="C-BOI-IE-AMS-MORTBUS")
 
 Name<-"MORTGAGE BUSINESS"
 Bkk<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MORTBUS"), ]
@@ -264,7 +207,6 @@ Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-RESOURSEBUS"), ]
 write.table(Name, file = "out7.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(Cards,file="out7.csv",append=TRUE,sep=",",row.names=FALSE)
 
-
 Name<-"TMB TRB"
 CIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-TMB/TRBFRONTEND"), ]
 write.table(Name, file = "out7.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
@@ -275,22 +217,15 @@ ITEM<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BIFFRONTEND"), ]
 write.table(Name, file = "out7.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(ITEM,file="out7.csv",append=TRUE,sep=",",row.names=FALSE)
 
-
-Name<-"MIS"
-MIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MIS"), ]
-write.table(Name, file = "out7.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(MIS,file="out7.csv",append=TRUE,sep=",",row.names=FALSE)
-
-
-Name<-"PRINT"
-PRINT<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-PRINT"), ]
-write.table(Name, file = "out7.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(PRINT,file="out7.csv",append=TRUE,sep=",",row.names=FALSE)
-
 ##################################################
+INfile<- NA
+z<- NA
+Bkk<- NA
+Cards<-NA
+CIS<-NA
+ITEM<-NA
 INfile<-read.csv("Closed SR's.csv")
 z<-INfile[order(INfile$Owner.Group),]
-#CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-RESOURSEBUS",z$Owner.Group=="C-BOI-IE-AMS-MORTBUS")
 
 Name<-"MORTGAGE BUSINESS"
 Bkk<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MORTBUS"), ]
@@ -302,7 +237,6 @@ Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-RESOURSEBUS"), ]
 write.table(Name, file = "out8.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(Cards,file="out8.csv",append=TRUE,sep=",",row.names=FALSE)
 
-
 Name<-"TMB TRB"
 CIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-TMB/TRBFRONTEND"), ]
 write.table(Name, file = "out8.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
@@ -313,23 +247,15 @@ ITEM<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BIFFRONTEND"), ]
 write.table(Name, file = "out8.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(ITEM,file="out8.csv",append=TRUE,sep=",",row.names=FALSE)
 
-
-Name<-"MIS"
-MIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MIS"), ]
-write.table(Name, file = "out8.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(MIS,file="out8.csv",append=TRUE,sep=",",row.names=FALSE)
-
-
-Name<-"PRINT"
-PRINT<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-PRINT"), ]
-write.table(Name, file = "out8.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(PRINT,file="out8.csv",append=TRUE,sep=",",row.names=FALSE)
-
-
 ############PR's######################################
+INfile<- NA
+z<- NA
+Bkk<- NA
+Cards<-NA
+CIS<-NA
+ITEM<-NA
 INfile<-read.csv("Closed PR's.csv")
 z<-INfile[order(INfile$Owner.Group),]
-#CoreAc<-c(z$Owner.Group=="C-BOI-IE-AMS-RESOURSEBUS",z$Owner.Group=="C-BOI-IE-AMS-MORTBUS")
 
 Name<-"MORTGAGE BUSINESS"
 Bkk<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MORTBUS"), ]
@@ -350,26 +276,6 @@ Name<-"BIFF FRONTEND"
 ITEM<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BIFFRONTEND"), ]
 write.table(Name, file = "out9.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
 write.table(ITEM,file="out9.csv",append=TRUE,sep=",",row.names=FALSE)
-
-
-Name<-"MIS"
-MIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-MIS"), ]
-write.table(Name, file = "out9.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(MIS,file="out9.csv",append=TRUE,sep=",",row.names=FALSE)
-
-
-Name<-"PRINT"
-PRINT<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-PRINT"), ]
-write.table(Name, file = "out9.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
-write.table(PRINT,file="out9.csv",append=TRUE,sep=",",row.names=FALSE)
-
-
-
-
-
-
-
-
 
 #######################output#######################################
 
