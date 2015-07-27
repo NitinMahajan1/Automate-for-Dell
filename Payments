@@ -1,5 +1,5 @@
-setwd("C:/Documents and Settings/C971896/Desktop/Automation#/TMB")
-f_date<- as.Date(c("2015-07-13"))
+setwd("C:/Documents and Settings/C971896/Desktop/Automation#/Payments")
+f_date<- as.Date(c("2015-07-20"))
 source("AGING.R")
 
 INfile<- NA
@@ -461,38 +461,136 @@ table(AGING(ITEM,f_date))
 #Aging #######End#########
 write.table(ITEM,file="out9.csv",append=TRUE,sep=",",row.names=FALSE)
 
+############################New Changes ######################
+INfile<- NA
+z<- NA
+Bkk<- NA
+Cards<-NA
+CIS<-NA
+ITEM<-NA
+INfile<-read.csv("New BEPPAS CH's.csv")
+#z<-INfile[order(INfile$Owner.Group),]
+
+Name<-"BEPP Mainframe"
+write.table(Name, file = "out10.csv",row.names=FALSE, na="",col.names=FALSE, sep=",")
+write.table(INfile,file="out10.csv",append=TRUE,sep=",",row.names=FALSE)
+
+INfile<- NA
+z<- NA
+Bkk<- NA
+Cards<-NA
+CIS<-NA
+ITEM<-NA
+INfile<-read.csv("New BOL CH's.csv")
+
+Name<-"BOL"
+write.table(Name, file = "out10.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
+write.table(INfile,file="out10.csv",append=TRUE,sep=",",row.names=FALSE)
+
+INfile<- NA
+z<- NA
+Bkk<- NA
+Cards<-NA
+CIS<-NA
+ITEM<-NA
+INfile<-read.csv("New EFT CH's.csv")
+
+Name<-"EFT"
+write.table(Name, file = "out10.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
+write.table(INfile,file="out10.csv",append=TRUE,sep=",",row.names=FALSE)
+
+############################ Closed Changes ######################
+INfile<- NA
+
+INfile<-read.csv("Closed BEPPAS CH's.csv")
+
+Name<-"BEPP Mainframe"
+write.table(Name, file = "out11.csv",row.names=FALSE, na="",col.names=FALSE, sep=",")
+write.table(INfile,file="out11.csv",append=TRUE,sep=",",row.names=FALSE)
+
+INfile<- NA
+
+INfile<-read.csv("Closed BOL CH's.csv")
+
+Name<-"BOL"
+write.table(Name, file = "out11.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
+write.table(INfile,file="out11.csv",append=TRUE,sep=",",row.names=FALSE)
+
+INfile<- NA
+
+INfile<-read.csv("Closed EFT CH's.csv")
+
+Name<-"EFT"
+write.table(Name, file = "out11.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
+write.table(INfile,file="out11.csv",append=TRUE,sep=",",row.names=FALSE)
+
+############################ Open Changes ######################
+INfile<- NA
+
+INfile<-read.csv("Open BEPPAS CH's.csv")
+#X<-count.fields(INfile,sep=",")
+Name<-"BEPP Mainframe"
+write.table(Name, file = "out12.csv",row.names=FALSE, na="",col.names=FALSE, sep=",")
+write.table(INfile,file="out12.csv",append=TRUE,sep=",",row.names=FALSE)
+
+INfile<- NA
+
+INfile<-read.csv("Open BOL CH's.csv")
+
+Name<-"BOL"
+write.table(Name, file = "out12.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
+write.table(INfile,file="out12.csv",append=TRUE,sep=",",row.names=FALSE)
+
+INfile<- NA
+
+INfile<-read.csv("Open EFT CH's.csv")
+
+Name<-"EFT"
+write.table(Name, file = "out12.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
+write.table(INfile,file="out12.csv",append=TRUE,sep=",",row.names=FALSE)
 #######################output#######################################
 
+
+
 library(xlsx)
-out <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out.csv", header=FALSE, na.strings="")
-out2 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out2.csv", header=FALSE, na.strings="")
-out3 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out3.csv", header=FALSE, na.strings="")
-out4 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out4.csv", header=FALSE, na.strings="")
-out5 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out5.csv", header=FALSE, na.strings="")
-out6 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out6.csv", header=FALSE, na.strings="")
-out7 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out7.csv", header=FALSE, na.strings="")
-out8 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out8.csv", header=FALSE, na.strings="")
-out9 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out9.csv", header=FALSE, na.strings="")
+out <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out.csv", header=FALSE, na.strings="")
+out2 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out2.csv", header=FALSE, na.strings="")
+out3 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out3.csv", header=FALSE, na.strings="")
+out4 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out4.csv", header=FALSE, na.strings="")
+out5 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out5.csv", header=FALSE, na.strings="")
+out6 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out6.csv", header=FALSE, na.strings="")
+out7 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out7.csv", header=FALSE, na.strings="")
+out8 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out8.csv", header=FALSE, na.strings="")
+out9 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out9.csv", header=FALSE, na.strings="")
+out10 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out10.csv", header=FALSE, na.strings="")
+out11 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out11.csv", header=FALSE, na.strings="")
+out12 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out12.csv", header=FALSE, na.strings="")
 
+write.xlsx(out, file="Weekly Payments stats.xlsx", sheetName="Open_IN", row.names=FALSE,col.names=FALSE,showNA=FALSE)
+write.xlsx(out2, file="Weekly Payments stats.xlsx", sheetName="Open_SR", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
+write.xlsx(out3, file="Weekly Payments stats.xlsx", sheetName="Open_PR", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
+write.xlsx(out4, file="Weekly Payments stats.xlsx", sheetName="New_IN", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
+write.xlsx(out5, file="Weekly Payments stats.xlsx", sheetName="New_SR", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
+write.xlsx(out6, file="Weekly Payments stats.xlsx", sheetName="New_PR", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
+write.xlsx(out7, file="Weekly Payments stats.xlsx", sheetName="Closed_IN", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
+write.xlsx(out8, file="Weekly Payments stats.xlsx", sheetName="Closed_SR", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
+write.xlsx(out9, file="Weekly Payments stats.xlsx", sheetName="Closed_PR", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
+write.xlsx(out10, file="Weekly Payments stats.xlsx", sheetName="New_CH", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
+write.xlsx(out11, file="Weekly Payments stats.xlsx", sheetName="Closed_CH", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
+write.xlsx(out12, file="Weekly Payments stats.xlsx", sheetName="Open_CH", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
 
-write.xlsx(out, file="Consolidated.xlsx", sheetName="Open_IN",row.names=FALSE,col.names=FALSE)
-write.xlsx(out2, file="Consolidated.xlsx", sheetName="Open_SR", append=TRUE,row.names=FALSE,col.names=FALSE)
-write.xlsx(out3, file="Consolidated.xlsx", sheetName="Open_PR", append=TRUE,row.names=FALSE,col.names=FALSE)
-write.xlsx(out4, file="Consolidated.xlsx", sheetName="New_IN", append=TRUE,row.names=FALSE,col.names=FALSE)
-write.xlsx(out5, file="Consolidated.xlsx", sheetName="New_SR", append=TRUE,row.names=FALSE,col.names=FALSE)
-write.xlsx(out6, file="Consolidated.xlsx", sheetName="New_PR", append=TRUE,row.names=FALSE,col.names=FALSE)
-write.xlsx(out7, file="Consolidated.xlsx", sheetName="Closed_IN", append=TRUE,row.names=FALSE,col.names=FALSE)
-write.xlsx(out8, file="Consolidated.xlsx", sheetName="Closed_SR", append=TRUE,row.names=FALSE,col.names=FALSE)
-write.xlsx(out9, file="Consolidated.xlsx", sheetName="Closed_PR", append=TRUE,row.names=FALSE,col.names=FALSE)
-
+write.xlsx
 ##############Delete intermdeiate Files###########
-setwd()
-file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out.csv")
-file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out2.csv")
-file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out3.csv")
-file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out4.csv")
-file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out5.csv")
-file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out6.csv")
-file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out7.csv")
-file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out8.csv")
-file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/TMB/out9.csv")
+#setwd()
+file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out.csv")
+file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out2.csv")
+file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out3.csv")
+file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out4.csv")
+file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out5.csv")
+file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out6.csv")
+file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out7.csv")
+file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out8.csv")
+file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out9.csv")
+file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out10.csv")
+file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out11.csv")
+file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out12.csv")
