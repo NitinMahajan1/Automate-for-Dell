@@ -1,6 +1,6 @@
 #setwd("C:/Documents and Settings/C971896/Desktop/Automation#/Payments")
 setwd("C:/Documents and Settings/C971896/Desktop/Automation#/Payments")
-f_date<- as.Date(c("2015-07-20"))
+f_date<- as.Date(c("2015-07-28"))
 source("AGING.R")
 
 INfile<- NA
@@ -23,10 +23,59 @@ x<-table(AGING(Bkk,f_date))
 #Aging #######End#########
 write.table(Bkk,file="out.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Open IN BEPP Mainframe"
-write.table(Namex,file="outx.csv",append=FALSE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+####Sev2,3,4#####START######
+Bkk2<- Bkk[which(Bkk$Internal.Priority=="2"), ]
+Age<- AGING(Bkk2,f_date)
+Type<-"IN2"
+Status<-"Open"
+Team<-"BEPP"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN2_Open_BEPP<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
 
+Bkk3<- Bkk[which(Bkk$Internal.Priority=="3"), ]
+Age<- AGING(Bkk3,f_date)
+Type<-"IN3"
+Status<-"Open"
+Team<-"BEPP"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN3_Open_BEPP<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+
+Bkk4<- Bkk[which(Bkk$Internal.Priority=="4"), ]
+Age<- AGING(Bkk4,f_date)
+Type<-"IN4"
+Status<-"Open"
+Team<-"BEPP"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN4_Open_BEPP<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+####Sev2,3,4#####STOP######
+# 
+# #####Summary#start###
+# Type<-"IN"
+# Status<-"Open"
+# Team<-"BEPP"
+# Age7<-table(Age==7)
+# Age15<-table(Age==15)
+# Age30<-table(Age==30)
+# Age60<-table(Age==60)
+# Age120<-table(Age==120)
+# Age999<-table(Age==999)
+# IN_Open_BEPP<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+# #####Summary#end###
 
 Name<-"BOL"
 Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BUSONLINE"), ]
@@ -38,9 +87,59 @@ x<-table(AGING(Cards,f_date))
 #Aging #######End#########
 write.table(Cards,file="out.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Open IN BOL"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+####Sev2,3,4#####START######
+Cards2<- Cards[which(Cards$Internal.Priority=="2"), ]
+Age<- AGING(Cards2,f_date)
+Type<-"IN2"
+Status<-"Open"
+Team<-"BOL"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN2_Open_BOL<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+
+Cards3<- Cards[which(Cards$Internal.Priority=="3"), ]
+Age<- AGING(Cards3,f_date)
+Type<-"IN3"
+Status<-"Open"
+Team<-"BOL"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN3_Open_BOL<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+
+Cards4<- Cards[which(Cards$Internal.Priority=="4"), ]
+Age<- AGING(Cards3,f_date)
+Type<-"IN4"
+Status<-"Open"
+Team<-"BOL"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN4_Open_BOL<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+####Sev2,3,4#####STOP######
+# 
+# #####Summary#start###
+# Type<-"IN"
+# Status<-"Open"
+# Team<-"BOL"
+# Age7<-table(Age==7)
+# Age15<-table(Age==15)
+# Age30<-table(Age==30)
+# Age60<-table(Age==60)
+# Age120<-table(Age==120)
+# Age999<-table(Age==999)
+# IN_Open_BOL<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+# #####Summary#end###
 
 Name<-"EFT"
 CIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-EFT"), ]
@@ -52,10 +151,61 @@ x<-table(AGING(CIS,f_date))
 #Aging #######End#########
 write.table(CIS,file="out.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Open IN EFT"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+####Sev2,3,4#####START######
+CIS2<- CIS[which(CIS$Internal.Priority=="2"), ]
+Age<- AGING(CIS2,f_date)
+Type<-"IN2"
+Status<-"Open"
+Team<-"EFT"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN2_Open_EFT<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
 
+CIS3<- CIS[which(CIS$Internal.Priority=="3"), ]
+Age<- AGING(CIS3,f_date)
+Type<-"IN3"
+Status<-"Open"
+Team<-"EFT"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN3_Open_EFT<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+
+CIS4<- CIS[which(CIS$Internal.Priority=="4"), ]
+Age<- AGING(CIS4,f_date)
+Type<-"IN4"
+Status<-"Open"
+Team<-"EFT"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN4_Open_EFT<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+
+####Sev2,3,4#####END#######
+
+
+# #####Summary#start###
+# Type<-"IN"
+# Status<-"Open"
+# Team<-"EFT"
+# Age7<-table(Age==7)
+# Age15<-table(Age==15)
+# Age30<-table(Age==30)
+# Age60<-table(Age==60)
+# Age120<-table(Age==120)
+# Age999<-table(Age==999)
+# IN_Open_EFT<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+# #####Summary#end###
 # 
 # Name<-"BIFF FRONTEND"
 # ITEM<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BIFFRONTEND"), ]
@@ -87,10 +237,19 @@ x<-table(AGING(Bkk,f_date))
 #Aging #######End#########
 write.table(Bkk,file="out2.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Open SR BEPP Mainframe"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
 
+#####Summary#start###
+Type<-"SR"
+Status<-"Open"
+Team<-"BEPP"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+SR_Open_BEPP<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 Name<-"BOL"
 Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BUSONLINE"), ]
@@ -102,9 +261,19 @@ x<-table(AGING(Cards,f_date))
 #Aging #######End#########
 write.table(Cards,file="out2.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Open SR BOL"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+
+#####Summary#start###
+Type<-"SR"
+Status<-"Open"
+Team<-"BOL"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+SR_Open_BOL<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 
 Name<-"EFT"
@@ -117,9 +286,19 @@ x<-table(AGING(CIS,f_date))
 #Aging #######End#########
 write.table(CIS,file="out2.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Open SR EFT"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#####Summary#start###
+Type<-"SR"
+Status<-"Open"
+Team<-"EFT"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+SR_Open_EFT<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
+
 
 # Name<-"BIFF FRONTEND"
 # ITEM<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BIFFRONTEND"), ]
@@ -152,9 +331,182 @@ x<-table(AGING(Bkk,f_date))
 #Aging #######End#########
 write.table(Bkk,file="out3.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Open PR BEPP Mainframe"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#setwd("C:/Documents and Settings/C971896/Desktop/Automation#/Payments")
+setwd("C:/Documents and Settings/C971896/Desktop/Automation#/Payments")
+f_date<- as.Date(c("2015-07-20"))
+source("AGING.R")
+
+INfile<- NA
+z<- NA
+Bkk<- NA
+Cards<-NA
+CIS<-NA
+ITEM<-NA
+INfile<-read.csv("Open IN's.csv")
+z<-INfile[order(INfile$Owner.Group),]
+
+
+Name<-"BEPP Mainframe"
+Bkk<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BEPPAS-MAINFRAME"), ]
+write.table(Name, file = "out.csv",row.names=FALSE, na="",col.names=FALSE, sep=",")
+#Aging function####Start##
+Age<- AGING(Bkk,f_date)
+Bkk$Age <- Age
+x<-table(AGING(Bkk,f_date))
+#Aging #######End#########
+write.table(Bkk,file="out.csv",append=TRUE,sep=",",row.names=FALSE)
+
+#####Summary#start###
+Type<-"IN"
+Status<-"Open"
+Team<-"BEPP"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN_Open_BEPP<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
+
+Name<-"BOL"
+Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BUSONLINE"), ]
+write.table(Name, file = "out.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
+#Aging function####Start##
+Age<- AGING(Cards,f_date)
+Cards$Age <- Age
+x<-table(AGING(Cards,f_date))
+#Aging #######End#########
+write.table(Cards,file="out.csv",append=TRUE,sep=",",row.names=FALSE)
+
+#####Summary#start###
+Type<-"IN"
+Status<-"Open"
+Team<-"BOL"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN_Open_BOL<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
+
+Name<-"EFT"
+CIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-EFT"), ]
+write.table(Name, file = "out.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
+#Aging function####Start##
+Age<- AGING(CIS,f_date)
+CIS$Age <- Age
+x<-table(AGING(CIS,f_date))
+#Aging #######End#########
+write.table(CIS,file="out.csv",append=TRUE,sep=",",row.names=FALSE)
+
+
+#####Summary#start###
+Type<-"IN"
+Status<-"Open"
+Team<-"EFT"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN_Open_EFT<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
+# 
+# Name<-"BIFF FRONTEND"
+# ITEM<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BIFFRONTEND"), ]
+# write.table(Name, file = "out.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
+# #Aging function####Start##
+# Age<- AGING(ITEM,f_date)
+# ITEM$Age <- Age
+# table(AGING(ITEM,f_date))
+# #Aging #######End#########
+# write.table(ITEM,file="out.csv",append=TRUE,sep=",",row.names=FALSE)
+
+##################################################
+INfile<- NA
+z<- NA
+Bkk<- NA
+Cards<-NA
+CIS<-NA
+ITEM<-NA
+INfile<-read.csv("Open SR's.csv")
+z<-INfile[order(INfile$Owner.Group),]
+
+Name<-"BEPP Mainframe"
+Bkk<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BEPPAS-MAINFRAME"), ]
+write.table(Name, file = "out2.csv",row.names=FALSE, na="",col.names=FALSE, sep=",")
+#Aging function####Start##
+Age<- AGING(Bkk,f_date)
+Bkk$Age <- Age
+x<-table(AGING(Bkk,f_date))
+#Aging #######End#########
+write.table(Bkk,file="out2.csv",append=TRUE,sep=",",row.names=FALSE)
+
+
+#####Summary#start###
+Type<-"SR"
+Status<-"Open"
+Team<-"BEPP"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+SR_Open_BEPP<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
+
+Name<-"BOL"
+Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BUSONLINE"), ]
+write.table(Name, file = "out2.csv",row.names=FALSE,append=TRUE, na="",col.names=FALSE, sep=",")
+#Aging function####Start##
+Age<- AGING(Cards,f_date)
+Cards$Age <- Age
+x<-table(AGING(Cards,f_date))
+#Aging #######End#########
+write.table(Cards,file="out2.csv",append=TRUE,sep=",",row.names=FALSE)
+
+
+#####Summary#start###
+Type<-"SR"
+Status<-"Open"
+Team<-"BOL"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+SR_Open_BOL<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
+
+
+Name<-"EFT"
+CIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-EFT"), ]
+write.table(Name, file = "out2.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
+#Aging function####Start##
+Age<- AGING(CIS,f_date)
+CIS$Age <- Age
+x<-table(AGING(CIS,f_date))
+#Aging #######End#########
+write.table(CIS,file="out2.csv",append=TRUE,sep=",",row.names=FALSE)
+
+#####Summary#start###
+Type<-"PR"
+Status<-"Open"
+Team<-"BEPP"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+PR_Open_BEPP<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 Name<-"BOL"
 Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BUSONLINE"), ]
@@ -166,10 +518,18 @@ x<-table(AGING(Cards,f_date))
 #Aging #######End#########
 write.table(Cards,file="out3.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Open PR BOL"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-
+#####Summary#start###
+Type<-"PR"
+Status<-"Open"
+Team<-"BOL"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+PR_Open_BOL<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 Name<-"EFT"
 CIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-EFT"), ]
@@ -181,10 +541,18 @@ x<-table(AGING(CIS,f_date))
 #Aging #######End#########
 write.table(CIS,file="out3.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Open PR EFT"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-
+#####Summary#start###
+Type<-"PR"
+Status<-"Open"
+Team<-"EFT"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+PR_Open_EFT<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 # Name<-"BIFF FRONTEND"
 # ITEM<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BIFFRONTEND"), ]
@@ -219,9 +587,18 @@ x<-table(AGING(Bkk,f_date))
 #Aging #######End#########
 write.table(Bkk,file="out4.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"New IN Bepp Mainframe BOL"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#####Summary#start###
+Type<-"IN"
+Status<-"New"
+Team<-"BEPP"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN_New_BEPP<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 Name<-"BOL"
 Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BUSONLINE"), ]
@@ -233,9 +610,18 @@ x<-table(AGING(Cards,f_date))
 #Aging #######End#########
 write.table(Cards,file="out4.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"New IN BOL"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#####Summary#start###
+Type<-"IN"
+Status<-"New"
+Team<-"BOL"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN_New_BOL<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 Name<-"EFT"
 CIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-EFT"), ]
@@ -247,9 +633,18 @@ x<-table(AGING(CIS,f_date))
 #Aging #######End#########
 write.table(CIS,file="out4.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"New IN EFT"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#####Summary#start###
+Type<-"IN"
+Status<-"New"
+Team<-"EFT"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN_New_EFT<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 # Name<-"BIFF FRONTEND"
 # ITEM<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BIFFRONTEND"), ]
@@ -281,9 +676,19 @@ x<-table(AGING(Bkk,f_date))
 #Aging #######End#########
 write.table(Bkk,file="out5.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"New SR BEPP Mainframe"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#####Summary#start###
+Type<-"SR"
+Status<-"New"
+Team<-"BEPP"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+SR_New_BEPP<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
+
 
 Name<-"BOL"
 Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BUSONLINE"), ]
@@ -295,9 +700,18 @@ x<-table(AGING(Cards,f_date))
 #Aging #######End#########
 write.table(Cards,file="out5.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"New SR BOL"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#####Summary#start###
+Type<-"SR"
+Status<-"New"
+Team<-"BOL"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+SR_New_BOL<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 Name<-"EFT"
 CIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-EFT"), ]
@@ -309,10 +723,19 @@ x<-table(AGING(CIS,f_date))
 #Aging #######End#########
 write.table(CIS,file="out5.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"New SR's EFT"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
- 
+#####Summary#start###
+Type<-"SR"
+Status<-"New"
+Team<-"EFT"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+SR_New_EFT<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
+
 # Name<-"BIFF FRONTEND"
 # ITEM<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BIFFRONTEND"), ]
 # write.table(Name, file = "out5.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
@@ -343,10 +766,18 @@ x<-table(AGING(Bkk,f_date))
 #Aging #######End#########
 write.table(Bkk,file="out6.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"New PR's BEPP Mainframe"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-
+#####Summary#start###
+Type<-"PR"
+Status<-"New"
+Team<-"BEPP"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+PR_New_BEPP<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 Name<-"BOL"
 Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BUSONLINE"), ]
@@ -358,10 +789,19 @@ x<-table(AGING(Cards,f_date))
 #Aging #######End#########
 write.table(Cards,file="out6.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"New PR's BOL"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
 
+#####Summary#start###
+Type<-"PR"
+Status<-"New"
+Team<-"BOL"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+PR_New_BOL<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 Name<-"EFT"
 CIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-EFT"), ]
@@ -373,9 +813,18 @@ x<-table(AGING(CIS,f_date))
 #Aging #######End#########
 write.table(CIS,file="out6.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"New PR's EFT"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#####Summary#start###
+Type<-"PR"
+Status<-"New"
+Team<-"EFT"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+PR_New_EFT<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 # 
 # Name<-"BIFF FRONTEND"
@@ -410,9 +859,18 @@ x<-table(AGING(Bkk,f_date))
 #Aging #######End#########
 write.table(Bkk,file="out7.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Closed IN's BEPP Mainframe"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#####Summary#start###
+Type<-"IN"
+Status<-"Closed"
+Team<-"BEPP"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN_Closed_BEPP<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 
 Name<-"BOL"
@@ -425,9 +883,18 @@ x<-table(AGING(Cards,f_date))
 #Aging #######End#########
 write.table(Cards,file="out7.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Closed IN's BOL"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#####Summary#start###
+Type<-"IN"
+Status<-"Closed"
+Team<-"BOL"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN_Closed_BOL<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 Name<-"EFT"
 CIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-EFT"), ]
@@ -439,9 +906,18 @@ x<-table(AGING(CIS,f_date))
 #Aging #######End#########
 write.table(CIS,file="out7.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Closed IN's EFT"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#####Summary#start###
+Type<-"IN"
+Status<-"Closed"
+Team<-"EFT"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+IN_Closed_EFT<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 # Name<-"BIFF FRONTEND"
 # ITEM<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BIFFRONTEND"), ]
@@ -473,9 +949,19 @@ x<-table(AGING(Bkk,f_date))
 #Aging #######End#########
 write.table(Bkk,file="out8.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Closed SR's BEPP Mainframe"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#####Summary#start###
+Type<-"SR"
+Status<-"Closed"
+Team<-"BEPP"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+SR_Closed_BEPP<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
+
 
 Name<-"BOL"
 Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BUSONLINE"), ]
@@ -487,9 +973,19 @@ x<-table(AGING(Cards,f_date))
 #Aging #######End#########
 write.table(Cards,file="out8.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Closed SR's BOL"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#####Summary#start###
+Type<-"SR"
+Status<-"Closed"
+Team<-"BOL"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+SR_Closed_BOL<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
+
 
 Name<-"EFT"
 CIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-EFT"), ]
@@ -501,9 +997,18 @@ x<-table(AGING(CIS,f_date))
 #Aging #######End#########
 write.table(CIS,file="out8.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Closed SR's EFT"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#####Summary#start###
+Type<-"SR"
+Status<-"Closed"
+Team<-"EFT"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+SR_Closed_EFT<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 # Name<-"BIFF FRONTEND"
 # ITEM<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BIFFRONTEND"), ]
@@ -535,9 +1040,18 @@ x<-table(AGING(Bkk,f_date))
 #Aging #######End#########
 write.table(Bkk,file="out9.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Closed PR's BEPP Mainframe"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#####Summary#start###
+Type<-"PR"
+Status<-"Closed"
+Team<-"BEPP"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+PR_Closed_BEPP<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 Name<-"BOL"
 Cards<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BUSONLINE"), ]
@@ -549,9 +1063,18 @@ x<-table(AGING(Cards,f_date))
 #Aging #######End#########
 write.table(Cards,file="out9.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Closed PR's BOL"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#####Summary#start###
+Type<-"PR"
+Status<-"Closed"
+Team<-"BOL"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+PR_Closed_BOL<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
 
 Name<-"EFT"
 CIS<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-EFT"), ]
@@ -563,10 +1086,22 @@ x<-table(AGING(CIS,f_date))
 #Aging #######End#########
 write.table(CIS,file="out9.csv",append=TRUE,sep=",",row.names=FALSE)
 
-Namex<-"Closed PR's EFT"
-write.table(Namex,file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
-write.table(t(x),file="outx.csv",append=TRUE,sep=",",row.names=FALSE)
+#####Summary#start###
+Type<-"PR"
+Status<-"Closed"
+Team<-"EFT"
+Age7<-table(Age==7)
+Age15<-table(Age==15)
+Age30<-table(Age==30)
+Age60<-table(Age==60)
+Age120<-table(Age==120)
+Age999<-table(Age==999)
+PR_Closed_EFT<-data.frame(age7=Age7[2],age15=Age15[2],age30=Age30[2],age60=Age60[2],age120=Age120[2],age999=Age999[2],Type,Status,Team,row.names=FALSE)
+#####Summary#end###
+#row<-rbind(IN2_Open_BEPP,IN3_Open_BEPP,IN4_Open_BEPP,IN2_Open_BOL,IN3_Open_BOL,IN4_Open_BOL,IN2_Open_EFT,IN3_Open_EFT,IN4_Open_EFT,SR_Open_BEPP,SR_Open_BOL,SR_Open_EFT,PR_Open_BEPP,PR_Open_BOL,PR_Open_EFT,IN_New_BEPP,IN_New_BOL,IN_New_EFT,SR_New_BEPP,SR_New_BOL,SR_New_EFT,PR_New_BEPP,PR_New_BOL,PR_New_EFT,IN_Closed_BEPP,IN_Closed_BOL,IN_Closed_EFT,SR_Closed_BEPP,SR_Closed_BOL,SR_Closed_EFT,PR_Closed_BEPP,PR_Closed_BOL,PR_Closed_EFT)
+row2<-rbind(IN_Closed_BEPP,SR_Closed_BEPP,PR_Closed_BEPP,IN_New_BEPP,SR_New_BEPP,PR_New_BEPP,IN2_Open_BEPP,IN3_Open_BEPP,IN4_Open_BEPP,SR_Open_BEPP,PR_Open_BEPP,IN_Closed_BOL,SR_Closed_BOL,PR_Closed_BOL,IN_New_BOL,SR_New_BOL,PR_New_BOL,IN2_Open_BOL,IN3_Open_BOL,IN4_Open_BOL,SR_Open_BOL,PR_Open_BOL,IN_Closed_EFT,SR_Closed_EFT,PR_Closed_EFT,IN_New_EFT,SR_New_EFT,PR_New_EFT,IN2_Open_EFT,IN3_Open_EFT,IN4_Open_EFT,SR_Open_EFT,PR_Open_EFT,SR_Open_EFT,PR_Open_EFT)
 
+row
 # Name<-"BIFF FRONTEND"
 # ITEM<- z[ which(z$Owner.Group=="C-BOI-IE-AMS-BIFFRONTEND"), ]
 # write.table(Name, file = "out9.csv",append=TRUE,row.names=FALSE, na="",col.names=FALSE, sep=",")
@@ -702,7 +1237,7 @@ out12 <- read.csv("C:/Documents and Settings/C971896/Desktop/Automation#/Payment
 
 
 #write.xlsx(out, file="Weekly Payments stats.xlsx", sheetName="Open_IN", row.names=FALSE,col.names=FALSE,showNA=FALSE)
-write.xlsx(out, file="Weekly Payments stats.xlsx", sheetName="Open_SR", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
+write.xlsx(out, file="Weekly Payments stats.xlsx", sheetName="Open_IN", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
 write.xlsx(out2, file="Weekly Payments stats.xlsx", sheetName="Open_SR", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
 write.xlsx(out3, file="Weekly Payments stats.xlsx", sheetName="Open_PR", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
 write.xlsx(out4, file="Weekly Payments stats.xlsx", sheetName="New_IN", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
@@ -714,8 +1249,9 @@ write.xlsx(out9, file="Weekly Payments stats.xlsx", sheetName="Closed_PR", appen
 write.xlsx(out10, file="Weekly Payments stats.xlsx", sheetName="New_CH", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
 write.xlsx(out11, file="Weekly Payments stats.xlsx", sheetName="Closed_CH", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
 write.xlsx(out12, file="Weekly Payments stats.xlsx", sheetName="Open_CH", append=TRUE,row.names=FALSE,col.names=FALSE,showNA=FALSE)
+write.xlsx(row2, file="Weekly Payments stats.xlsx", sheetName="Summary", append=TRUE,row.names=FALSE,col.names=TRUE,showNA=FALSE)
 
-write.xlsx
+
 ##############Delete intermdeiate Files###########
 #setwd()
 file.remove("C:/Documents and Settings/C971896/Desktop/Automation#/Payments/out.csv")
